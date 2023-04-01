@@ -46,24 +46,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Organization::observe(CreatedByObserver::class);
-        Product::observe(CreatedByObserver::class);
-        ProductGroup::observe(CreatedByObserver::class);
-        ProductGroupPriority::observe(CreatedByObserver::class);
-        Gift::observe(CreatedByObserver::class);
-        File::observe(CreatedByObserver::class);
-        Agency::observe(CreatedByObserver::class);
-        AgencyOrder::observe(CreatedByObserver::class);
-        Promotion::observe(CreatedByObserver::class);
-        Rank::observe(CreatedByObserver::class);
-        RevenuePeriod::observe(CreatedByObserver::class);
-        Store::observe(CreatedByObserver::class);
-        StoreChange::observe(CreatedByObserver::class);
-        StoreOrder::observe(CreatedByObserver::class);
         //
-        Store::observe(StoreObserver::class);
-        StoreOrder::observe(StoreOrderObserver::class);
-        AgencyOrder::observe(AgencyOrderObserver::class);
-        Organization::observe(OrganizationObserver::class);
     }
 }

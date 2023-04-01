@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\SystemVariable;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Permission;

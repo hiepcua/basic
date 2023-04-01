@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-use App\Models\Organization;
 
 class User extends Authenticatable
 {
@@ -33,7 +32,6 @@ class User extends Authenticatable
         'updated_by',
         'parent_id',
         'image',
-        'base_code',
     ];
 
     /**

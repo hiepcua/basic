@@ -3,9 +3,6 @@
 namespace App\Services;
 
 use App\Helpers\Helper;
-use App\Models\Agency;
-use App\Repositories\ReportRevenueOrder\ReportRevenueOrderRepositoryInterface;
-use App\Repositories\StoreOrder\StoreOrderRepositoryInterface;
 use Carbon\Carbon;
 
 class DashboardService extends BaseService
@@ -13,14 +10,9 @@ class DashboardService extends BaseService
     protected $storeOrderRepository;
     protected $reportRevenueOrderRepository;
 
-    public function __construct(
-        StoreOrderRepositoryInterface $storeOrderRepository,
-        ReportRevenueOrderRepositoryInterface $reportRevenueOrderRepository
-    ){
+    public function __construct()
+    {
         parent::__construct();
-
-        $this->storeOrderRepository = $storeOrderRepository;
-        $this->reportRevenueOrderRepository = $reportRevenueOrderRepository;
     }
 
     public function setModel()
@@ -77,7 +69,7 @@ class DashboardService extends BaseService
             if (isset($newTotalAmountByGroup[$amountByGroup->product_group_id])) {
                 $newTotalAmountByGroup[$amountByGroup->product_group_id]->month_total_amount += $amountByGroup->sum_total_amount;
             } else {
-                $amountByGroup->month_total_amount = $amountByGroup->sum_total_amount;
+                $amountByGroup->month_total_amount                       = $amountByGroup->sum_total_amount;
                 $newTotalAmountByGroup[$amountByGroup->product_group_id] = $amountByGroup;
             }
         }
@@ -92,23 +84,23 @@ class DashboardService extends BaseService
             Helper::currentUser()->id,
             "$agoYear-$agoMonthText"
         );
-        $percentAgoMonthText = '';
+        $percentAgoMonthText     = '';
         if ($totalAmountAgoMonth) {
-            $percent = $totalAmountCurrentMonth / $totalAmountAgoMonth;
-            $percent                 = $percent == 0
+            $percent             = $totalAmountCurrentMonth / $totalAmountAgoMonth;
+            $percent             = $percent == 0
                 ? 0
                 : number_format($percent * 100, 2, ',');
-            $totalAmountAgoMonth     = Helper::formatPrice($totalAmountAgoMonth) . 'đ';
-            $percentAgoMonthText     = "$percent% tháng $agoMonth ($totalAmountAgoMonth)";
+            $totalAmountAgoMonth = Helper::formatPrice($totalAmountAgoMonth) . 'đ';
+            $percentAgoMonthText = "$percent% tháng $agoMonth ($totalAmountAgoMonth)";
         }
         $reportRevenueOrders = $this->reportRevenueOrderRepository
             ->getByUser(Helper::currentUser()->id, "$year-$monthText")
             ->toArray();
-        $orders = [];
+        $orders              = [];
         foreach ($reportRevenueOrders as $order) {
             if (isset($order['product_group']) && isset($order['product'])) {
                 $orders[$order['product_group']['name']]['item'][] = [
-                    'name' => $order['product']['name'] ?? '',
+                    'name'               => $order['product']['name'] ?? '',
                     'month_total_amount' => $order['month_total_amount'] ?? ''
                 ];
 

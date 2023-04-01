@@ -16,7 +16,6 @@
 
 @stack('scripts-page-vendor')
 @include('snippets.scripts-provinces')
-@include('snippets.scripts-organization')
 <script src="{{ mix('js/core/scripts.js') }}"></script>
 
 <script defer>

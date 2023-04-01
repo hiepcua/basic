@@ -3,9 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\District;
-use App\Models\Organization;
 use App\Models\ProductGroup;
-use App\Models\ProductGroupPriority;
 use App\Models\Province;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cookie;
@@ -81,17 +79,10 @@ class Helper
 
     public static function menuData(): array
     {
-        $user     = self::currentUser();
-        $roleName = self::userRoleName();
-
+        $user           = self::currentUser();
         $user_tdv_items = [];
-        if ($roleName == "TDV") {
-            $user_tdv_items = config('menu_tdv');
-        } else {
-            $menu_items = config('menu.default');
-        }
-
-        $user_items = [
+        $menu_items     = config('menu.default');
+        $user_items     = [
             'name'  => 'Tài khoản: ' . $user->name ?? '',
             'group' => true,
             'child' => [

@@ -16,8 +16,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        SyncUsers::class,
-        SyncStores::class,
         RepositoryMake::class,
     ];
 

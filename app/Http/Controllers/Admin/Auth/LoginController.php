@@ -51,10 +51,6 @@ class LoginController extends Controller
 
     public function redirectTo(): string
     {
-        if (request()->user()->hasRole(User::ROLE_TDV)) {
-            return route('admin.tdv.dashboard');
-        }
-
         return route('admin.dashboard.index');
     }
 

@@ -14,19 +14,13 @@ class DashboardController extends Controller
 
     public function __construct(DashboardService $service)
     {
-        $roleAdmin = User::ROLE_Admin;
-        $roleTdv = User::ROLE_TDV;
+        $roleAdmin     = User::ROLE_Admin;
         $this->service = $service;
     }
 
     function index()
     {
-        if (request()->user()->hasRole(User::ROLE_TDV)) {
-            return redirect()->route('admin.tdv.dashboard');
-        }
-
-        $page_title = "Tổng quan";
-
+        $page_title       = "Tổng quan";
         $mo_chua_xu_ly    = 0;//SmsMo::query()->where('status', 0)->count();
         $mo_chua_xu_ly    = number_format($mo_chua_xu_ly, 0, ',', '.');
         $customer_total   = 0;//Customer::query()->count();
@@ -37,7 +31,7 @@ class DashboardController extends Controller
         $wrong_data_total = number_format($wrong_data_total, 0, ',', '.');
 
         return view('pages.dashboard.index', compact('mo_chua_xu_ly', 'customer_total', 'product_total', 'wrong_data_total'))
-            ->with('page_title',$page_title);
+            ->with('page_title', $page_title);
 
     }
 }
