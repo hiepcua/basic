@@ -5,6 +5,7 @@ namespace App\Helpers;
 use App\Models\District;
 use App\Models\ProductGroup;
 use App\Models\Province;
+use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Log;

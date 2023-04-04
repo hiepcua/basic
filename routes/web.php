@@ -66,6 +66,9 @@ Route::as('admin.')->group(function () {
                 Route::get('{type}', [FileController::class, 'handle'])->name('action');
             });
 
+            // POST
+            Route::resource('posts', '');
+
             //AJAX
             Route::get('get-province/{type}', [ProvinceController::class, 'getByType'])->name('get-province-type');
         });

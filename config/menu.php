@@ -123,28 +123,6 @@ return [
                                         ],
                                     ]
                                 ],
-                                [
-                                    'name'    => '10.1.4 Cây sơ đồ',
-                                    'route'   => 'admin.organizations.index',
-                                    'perm'    => 'xem_danh_sach_vai_tro',
-                                    'pattern' => [
-                                        'organizations/*',
-                                        'organizations/*/*',
-                                        'organizations/*/*/*',
-                                    ],
-                                    'child'   => [
-                                        [
-                                            'name'    => '10.1.4 Thêm cây sơ đồ',
-                                            'route'   => 'admin.organizations.create',
-                                            'display' => false
-                                        ],
-                                        [
-                                            'name'    => '10.1.4 Sửa cây sơ đồ',
-                                            'route'   => 'admin.organizations.edit',
-                                            'display' => false
-                                        ],
-                                    ],
-                                ],
                             ]
                         ],
                         [
@@ -195,16 +173,6 @@ return [
                                     ]
                                 ],
                             ]
-                        ],
-                        [
-                            'name'    => '10.5 Cấu hình hệ thống',
-                            'route'   => 'admin.system-variable.setting',
-                            'perm'    => 'setting_thong_so_he_thong',
-                            'pattern' => [
-                                'system-variable/*',
-                                'system-variable/*/*',
-                                'system-variable/*/*/*'
-                            ],
                         ],
                     ],
                 ],

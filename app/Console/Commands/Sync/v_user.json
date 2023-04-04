@@ -1,0 +1,83 @@
+[
+    {
+        "type": "header",
+        "version": "5.1.1",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "tm01"
+    },
+    {
+        "type": "table",
+        "name": "u",
+        "database": "tm01",
+        "data": [
+            {
+                "id": "1",
+                "created_at": "1",
+                "updated_at": "1626666803",
+                "email": "tranviethiepdz@gmail.com",
+                "username": "tranviethiepdz@gmail.com",
+                "password_hash": "$2y$10$m2XqlaOB3B0xpJ3ch4zax.GTL8oasMJJvsQDMWTajt.zYcfDcHViW",
+                "full_name": "Trần Hiệp",
+                "birthday": "1994-09-06",
+                "mobile": "0969549903",
+                "active": "1",
+                "group_ids": "1"
+            },
+            {
+                "id": "2",
+                "created_at": "1",
+                "updated_at": "1626666803",
+                "email": "tranhiep2@gmail.com",
+                "username": "tranhiep2",
+                "password_hash": "$2y$10$IUKz8gBzTFlgKVfCLNalxOpueThpVirllTH34V8xWQcBp7pD78AIu",
+                "full_name": "SubAdmin",
+                "birthday": "1994-09-06",
+                "mobile": "0969549903",
+                "active": "1",
+                "group_ids": "2,3,4,5"
+            },
+            {
+                "id": "3",
+                "created_at": "1",
+                "updated_at": "1626666803",
+                "email": "tranhiep3@gmail.com",
+                "username": "tranhiep3",
+                "password_hash": "$2y$10$U5Juuut4chzPh4jSH/LKh..9aNsJZ.Aftnpp5W3XVbCz8DGEgqpYG",
+                "full_name": "Content",
+                "birthday": "1994-09-06",
+                "mobile": "0969549903",
+                "active": "1",
+                "group_ids": "3"
+            },
+            {
+                "id": "4",
+                "created_at": "1",
+                "updated_at": "1626666803",
+                "email": "tranhiep4@gmail.com",
+                "username": "tranhiep4",
+                "password_hash": "$2y$10$X8OTGVXzMczMzoufWP47S.V5Aneak35W7U2lMVUJ7NlrK04YH/bwq",
+                "full_name": "Product",
+                "birthday": "1994-09-06",
+                "mobile": "0969549903",
+                "active": "1",
+                "group_ids": "4"
+            },
+            {
+                "id": "5",
+                "created_at": "1",
+                "updated_at": "1626666803",
+                "email": "tranhiep5@gmail.com",
+                "username": "tranhiep5",
+                "password_hash": "$2y$10$pbMVVwGPlKU/W86Bg3KfSe/s70lz9ZRZrbrySxtTLrCqqRaSSYXGy",
+                "full_name": "View",
+                "birthday": "1994-09-06",
+                "mobile": "0969549903",
+                "active": "1",
+                "group_ids": "5"
+            }
+        ]
+    }
+]
